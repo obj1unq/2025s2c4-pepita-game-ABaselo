@@ -1,5 +1,7 @@
 import wollok.game.*
 import pepita.*
+import extras.*
+
 
 program pepitaGame {
 	game.title("Pepita") 	//Valor por defecto "Wollok Game"
@@ -8,7 +10,28 @@ program pepitaGame {
 	game.cellSize(50) 		//valor por defecto 50
 	//search assets in assets folder, for example, for the background
 	//Valor por defecto game.ground("ground.png")
+	//tablero infinito
+	
+	//game.ground("silvestre.png")
+
+	//game.boardGround("silvestre.png")
+	//game.addVisual(pepita)
+		//fondo del juego
+	game.boardGround("fondo2.jpg")//acomoda la imagen en donde lo acomodamos del tablero
+
+	//game.addVisual(pepita)
+	game.addVisual(nido)
+	game.addVisualCharacter(pepita)
+	game.addVisualCharacter(silvestre)
+
+	
 	
 	//game.addVisual(pepita)
-	game.start()	
+
+
+
+
+	game.start()//arranca game  y no sirve mas nada, todo arrancan antes, si ponemos codigo adelante no trabajar.	
 }
+
+//programa define el programa.
