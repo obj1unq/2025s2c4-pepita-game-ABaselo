@@ -36,8 +36,13 @@ object pepita {
 		energia = energia + comida.energiaQueOtorga()
 	}
 
+	method energiaNecesaria(kms) =  9 * kms 
+
 	method volar(kms) {
-		energia = energia - 10 - kms 
+		energia -= self.energiaNecesaria(kms)
+		//energia -= 9 * kms
+		//energia = energia -self.energiaNecesaria(kms)
+		//energia = energia - self.energiaNecesaria(kms)
 	}
 	
 	method energia() {

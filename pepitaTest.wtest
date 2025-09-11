@@ -15,6 +15,18 @@ describe "Tests de Pepita" {
 		game.addVisual(pepita)
 	}
 
+	test "Pepita comienza con energia 100"{
+		assert.equals(100, pepita.energia())
+	}
+	test "Pepita al volar 1 km"{
+		pepita.volar(1)
+		assert.equals(91, pepita.energia())
+	}
+	test "Pepita al volar 2 km"{
+		pepita.volar(2)
+		assert.equals(81, pepita.energia())
+	}
+
 	test "Al comer pepita aumenta su energia" {
 		pepita.comer(manzana)
 		assert.equals(105, pepita.energia())
