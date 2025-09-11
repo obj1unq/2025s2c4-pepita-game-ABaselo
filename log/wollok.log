@@ -3120,3 +3120,4 @@
 {"level":"info","message":"⌛ Building environment","timeElapsed":104,"timestamp":"2025-09-11T21:24:34.773Z"}
 {"level":"info","message":"⌛ Validating pepitaGame.wpgm","timeElapsed":138,"timestamp":"2025-09-11T21:24:34.929Z"}
 {"level":"info","message":"⌛ Validating pepitaGame.wpgm","timeElapsed":123,"timestamp":"2025-09-11T21:24:35.144Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mpepitaGame.pepitaGame\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\user\\Objetos_1\\WollokGame\\2025s2c4-pepita-game-ABaselo\u001b[39m\u001b[23m","ok":true,"timeElapsed":406,"timestamp":"2025-09-11T21:24:41.118Z"}
