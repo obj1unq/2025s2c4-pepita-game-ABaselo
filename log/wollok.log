@@ -3188,3 +3188,5 @@
 {"level":"info","message":"⌛ Validating pepita.wlk","timeElapsed":124,"timestamp":"2025-09-11T22:17:26.048Z"}
 {"level":"info","message":"⌛ Validating pepitaGame.wpgm","timeElapsed":178,"timestamp":"2025-09-11T22:17:31.359Z"}
 {"error":["wollok.lang.EvaluationError: Error: Could not resolve reference to silvestre","  at Reference [pepita.wlk:8]"],"level":"info","message":"🖥️ REPL execution - build failed for c:\\Users\\user\\Objetos_1\\WollokGame\\2025s2c4-pepita-game-ABaselo-1","ok":false,"timeElapsed":422,"timestamp":"2025-09-11T22:17:45.400Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":151,"timestamp":"2025-09-11T22:18:02.652Z"}
+{"level":"info","message":"⌛ Validating pepitaTest.wtest","timeElapsed":160,"timestamp":"2025-09-11T22:18:02.813Z"}
