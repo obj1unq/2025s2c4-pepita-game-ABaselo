@@ -1,4 +1,6 @@
 import comidas.*
+import extras.*
+
 
 
 object pepita {
@@ -20,12 +22,6 @@ object pepita {
 
   method estaSobre(alguien)= position == alguien.position()
 	
-
-	
-
-
-
-
 	method text() = "\n Energia: \n" + energia
 
 	method textColor() = "FF00FF"
