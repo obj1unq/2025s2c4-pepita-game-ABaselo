@@ -1,6 +1,6 @@
 import comidas.*
 import extras.*
-
+import direcciones.*
 
 
 object pepita {
@@ -9,8 +9,10 @@ object pepita {
 	var property position = game.at(0,1)
 	const predador = silvestre
 	const hogar = nido  
+	
 	method image() {
-		 return "pepita-" + self.estado() + ".png" 
+			
+		return "pepita-" + self.estado() + ".png" 
 	}	
 
 	method estado(){
