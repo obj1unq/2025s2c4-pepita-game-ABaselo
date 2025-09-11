@@ -2,6 +2,7 @@ import comidas.*
 
 
 object pepita {
+	
 	var energia = 100
 //	var position = game.at(0,1)
 //var position = game.at(-1,1).left(1)
