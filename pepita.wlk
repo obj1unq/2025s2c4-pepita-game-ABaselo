@@ -1,3 +1,5 @@
+import niveles.*
+import wollok.vm.*
 import comidas.*
 import extras.*
 import direcciones.*
@@ -5,30 +7,70 @@ import direcciones.*
 
 object pepita {
 	
-	var energia = 100
-	var property position = game.at(0,1)
+	const posicionInicial = game.at(0,1)
+	const energiaInicial = 100
 	const predador = silvestre
-	const hogar = nido  
+	const hogar = nido
+	const joules = 9
 	
-	method image() {
-			
-		return "pepita-" + self.estado() + ".png" 
-	}	
+	var property position = posicionInicial
+	var energia = energiaInicial
+	var property atrapada = false
 
-	method estado(){
-		return if(self.atrapada()){"gris"}
-		else if(self.enhogar()){"grande"}
-		else {"base"}
+	
+	method inicializar(){
+		position = posicionInicial
+		energia = energiaInicial
+		atrapada = false
 	}
 
+	method image() {			
+		return "pepita-" + self.estado() + ".png" 
+	}
 
-  method estaSobre(alguien)= position == alguien.position()
-	
 	method text() = "\n Energia: \n" + energia
 
-	method textColor() = "FF00FF"
+	method textColor() = "FF00FF"		
 
+	method energia() {
+		return energia
+	}
+	
+	method atrapada() = self.estaSobre(predador)
 
+	method enHogar() = self.estaSobre(hogar)
+
+	method estado(){
+		return if(!self.puedeVolar()){"gris"}
+		else if(self.enHogar()){"grande"}
+		else {"base"}
+	}	
+
+    method puedeVolar() = energia >= self.energiaNecesaria(1) && not self.atrapada()
+
+	method loQueHayAca() = game.uniqueCollider(self)
+
+	method comerAca() {
+	  const comida = self.loQueHayAca()
+	  self.comer(comida)
+	  comida.andate()
+	}
+
+	method teAtraparon(){
+		self.atrapada(true)
+		game.say(self, "Me atraparon!!")
+		self.perder()
+	}
+	method perder(){
+		game.say(self, "perdiste, precionar la R para reniciar")
+		keyboard.r().onCollideDo{
+			game.clear()
+			nivel1.inicializar()
+			self.inicializar()
+		}
+	}
+
+	method estaSobre(alguien)= position == alguien.position()
 
 	method comer(comida) {
 		energia = energia + comida.energiaQueOtorga()
@@ -42,57 +84,13 @@ object pepita {
 		//energia = energia -self.energiaNecesaria(kms)
 		//energia = energia - self.energiaNecesaria(kms)
 	}
-	
-	method energia() {
-		return energia
-	}
-
-	 method atrapada() = self.estaSobre(predador)
-
-	 method enhogar() = self.estaSobre(hogar)
 
     method redibujarse() {
         game.removeVisual(self)
         game.addVisual(self)
     }
 
-//	var position = game.at(0,1)
-//var position = game.at(-1,1).left(1)
-	//var property position = game.at(0,1).up(1).down(3)
-	
-	//var position = game.at(1,1)
 
-/*
-	method position(_position){
-	position = _position
-	}
-	method position()= position
-*/
-
-
-/*------aplicamos polimorfismo-----
-method moverArriba(){
-	self.volar(1)
-	//self.position(pepita.position.up(1))
-	position = position.up(1)
-}
-method moverAbajo(){
-	self.volar(1)
-	//self.position(pepita.position.up(1))
-	position = position.down(1)
-}
-method moverIzquierda(){
-	self.volar(1)
-	//self.position(pepita.position.up(1))
-	position = position.left(1)
-}
-method moverDerecha() {
-	self.volar(1)
-	//self.position(pepita.position.up(1))
-	position = position.right(1)
-  
-}
-*/
 
 method mover(direccion){
 	self.volar(1)
@@ -101,5 +99,5 @@ method mover(direccion){
 }
 
 
-}
+}//fin objeto pepita
 
