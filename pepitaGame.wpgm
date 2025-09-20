@@ -11,6 +11,8 @@ import direcciones.*
 
 //empezar de cero
 program pepitaGame {
+	
+	
 	game.title("Pepita") 	//Valor por defecto "Wollok Game"
 	game.height(10) 		//valor por defecto 5
 	game.width(10) 			//valor por defecto 5
@@ -51,10 +53,10 @@ program pepitaGame {
 	*/
 	//hacemos sub tarea para polimorfismo
 
-	keyboard.up().onPressDo( pepita.mover(arriba))
-	keyboard.down().onPressDo( pepita.mover(abajo))
-	keyboard.right().onPressDo( pepita.mover(derecha))
-	keyboard.left().onPressDo( pepita.mover(izquierda))
+	keyboard.up().onPressDo( {pepita.mover(arriba)})
+	keyboard.down().onPressDo( {pepita.mover(abajo)})
+	keyboard.right().onPressDo( {pepita.mover(derecha)})
+	keyboard.left().onPressDo( {pepita.mover(izquierda)})
 	
 	//pepita.volar(1)
 	//pepita.position(pepita.position.up(1))
