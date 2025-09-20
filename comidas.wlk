@@ -24,8 +24,16 @@ object manzana {
 
 object alpiste {
 
+	var property poasition = game.at(7,3) 
+
+	method image() = "alpiste.png"
+
 	method energiaQueOtorga() {
 		return 20
+	}
+
+	method andate(){
+		game.removeVisual(self)
 	} 
 
 }
