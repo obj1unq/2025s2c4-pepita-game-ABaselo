@@ -1,15 +1,9 @@
 import wollok.game.*
 import pepita.*
 import extras.*
-import direcciones.*
 
 
-//BLOQUES
-//UN CONJUNTO DE CODIGO QUE REALIZAN ACCION EN EL WOLLOK GAME Y LO GUARDO COMO OBKJETOS.atrapada()
-//LO EVALUAMOS MAS ADELANTE.
 
-
-//empezar de cero
 program pepitaGame {
 	
 	
@@ -17,54 +11,10 @@ program pepitaGame {
 	game.height(10) 		//valor por defecto 5
 	game.width(10) 			//valor por defecto 5
 	game.cellSize(50) 		//valor por defecto 50
-	//search assets in assets folder, for example, for the background
-	//Valor por defecto game.ground("ground.png")
-	//tablero infinito
 	
-	//game.ground("silvestre.png")
-
-	//game.boardGround("silvestre.png")
-	//game.addVisual(pepita)
-		//fondo del juego
-
 
 	game.boardGround("fondo2.jpg")//acomoda la imagen en donde lo acomodamos del tablero
 
-	
-	//game.addVisual(pepita)
-	game.addVisual(nido)
-	game.addVisualCharacter(pepita)
-	game.addVisualCharacter(silvestre)
-	
-	/*
-	keyboard.up().onPressDo({
-		pepita.volar(1)
-		pepita.position(pepita.position.up(1))
-
-		})
-	*/
-	//aplicamos comportamientos en el juego.
-
-		/* aplicamos polimorfismo
-	keyboard.up().onPressDo( {pepita.moverArriba()})
-	keyboard.up().onPressDo( {pepita.moverAbajo()})
-	keyboard.up().onPressDo( {pepita.moverDerecha()})
-	keyboard.up().onPressDo( {pepita.moverIzquierda()})
-	*/
-	//hacemos sub tarea para polimorfismo
-
-	keyboard.up().onPressDo( {pepita.mover(arriba)})
-	keyboard.down().onPressDo( {pepita.mover(abajo)})
-	keyboard.right().onPressDo( {pepita.mover(derecha)})
-	keyboard.left().onPressDo( {pepita.mover(izquierda)})
-	
-	//pepita.volar(1)
-	//pepita.position(pepita.position.up(1))
-
-
-	//game.addVisual(pepita)
-
-	game.start()//arranca game  y no sirve mas nada, todo arrancan antes, si ponemos codigo adelante no trabajar.	
+	game.start()
 }
 
-//programa define el programa.
