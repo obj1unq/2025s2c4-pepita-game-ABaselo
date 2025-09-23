@@ -13,7 +13,7 @@ object nivel1 {
        game.addVisual(nido)
        game.addVisual(silvestre)
        game.addVisual(alpiste)
-      // game.addVisual(manzana)
+       game.addVisual(manzana)
 
         game.addVisual(pepita)
 
@@ -23,7 +23,7 @@ object nivel1 {
         keyboard.down().onPressDo  { pepita.mover(abajo)     }
         keyboard.right().onPressDo { pepita.mover(derecha)   }
         keyboard.left().onPressDo  { pepita.mover(izquierda) }
-        //keyboard.c().onCollideDo   { pepita.comerAca()       }
+       keyboard.c().onPressDo      { pepita.comerAca()       }
 
         game.onCollideDo(pepita, { algo => pepita.teAtraparon() })
         

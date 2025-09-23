@@ -24,9 +24,6 @@ object pepita {
 		energia = energiaInicial
 		atrapada = false
 	}
-
-	
-
 	
 
 	method image() {			
