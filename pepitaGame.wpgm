@@ -1,7 +1,8 @@
 import wollok.game.*
 import pepita.*
 import extras.*
-
+import niveles.*
+import comidas.*
 
 
 program pepitaGame {
@@ -14,6 +15,8 @@ program pepitaGame {
 	
 
 	game.boardGround("fondo2.jpg")//acomoda la imagen en donde lo acomodamos del tablero
+
+	nivel1.inicializar()
 
 	game.start()
 }

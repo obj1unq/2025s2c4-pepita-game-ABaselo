@@ -11,18 +11,23 @@ object pepita {
 	const energiaInicial = 100
 	const predador = silvestre
 	const hogar = nido
-	const joules = 9
+	//const joules = 9
 	
 	var property position = posicionInicial
+
 	var energia = energiaInicial
 	var property atrapada = false
 
 	
 	method inicializar(){
-		position = posicionInicial
+		position = game.at(0, 1)
 		energia = energiaInicial
 		atrapada = false
 	}
+
+	
+
+	
 
 	method image() {			
 		return "pepita-" + self.estado() + ".png" 
@@ -97,6 +102,8 @@ method mover(direccion){
 	//position = direccion.siguiente(self)
 	position = direccion.siguiente(position)
 }
+
+
 
 
 }//fin objeto pepita
